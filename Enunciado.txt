@@ -1,0 +1,57 @@
+
+Imagen 1:
+Simule, mediante lenguaje VHDL, usando el entorno de Vivado, lo que a continuación se pide.
+Como elementos de programación, use fusibles (idee cómo implementarlos en VHDL). Aunque solo se pida la simulación, es un error grave dejar pines "al aire".
+Diseñe una PAL 4L2 (con un único pin de salida y otro de entrada/salida), tipo primera generación de dispositivo PAL, de manera que todos los pines sean triestado y realimentación. Llame al módulo diseñado: "PAL_4L2".
+Utilice el estilo de descripción que estime oportuno (solo se va a simular el proyecto).
+Se pide un diseño jerárquico, donde todo componente implementado debe ser probado y estar disponible su prueba, para la comprobación de su correcto funcionamiento.
+Para comprobar el módulo superior, que deberá llamar "PAL_Prog", particularice la implementación genérica para que se comporte como una multiplexor de dos canales de datos.
+Se pide hacer toda la implementación en un único fichero fuente.
+El proyecto debe llamarse según la siguiente nomenclatura: ApellidosNombre_T5_Num.prj, siendo los apellidos y el nombre el del Jefe de Grupo, que subirá a Moodle dicho proyecto, como un único fichero comprimido (con zip). Analice cómo debe hacerlo para que se pueda comprobar la práctica con el fichero enviado.
+Añada un fichero fuente, de texto, al proyecto que se debe llamar "PHR26-LNN.txt" (particularizando ese nombre, según el nombre del equipo) donde aparezca, de forma similar a como se hizo en las prácticas del tema anterior, el nombre de los integrantes del equipo, poniendo en primer lugar e identificándole como tal, al Jefe de Grupo, y los demás miembros, por orden alfabético. Además, dentro de dicho fichero, incorpore un texto con el título: Num_Fus, dónde explique de forma detallada cuantos fusibles ha necesitado para la implementación pedida.
+
+OPCIONAL 1: Realice en un nuevo proyecto, similar al obligatorio, donde en la implementación se usen múltiples ficheros fuente. Compruebe las diferencias entre ambas filosofías de diseño.
+
+OPCIONAL 2: Implemente el proyecto pedido, pero usando otros estilos de descripción de componentes.
+
+De hacer las partes opcionales, suba al moodle el fichero del proyecto, como se ha indicado, pero particularizando el nombre del mismo, añadiendo al final, el texto "_opN", siendo N el número de la parte opcional realizada.
+
+
+
+
+
+Imagen 2:
+Usando la librería IEEE, describa con el estilo de flujo de datos, las funciones básicas combinacionales: inversor (operación unaria) y la suma y producto (estas dos últimas, operaciones binarias). Compruebe el correcto funcionamiento de cada una de las implementaciones hechas.
+Utilizando los diseños hechos, describa con el estilo estructural un comparador de dos números de un bit con entradas de expansión. Debe comprobar su correcto funcionamiento.
+Y, de nuevo, utilizando el diseño anterior, implemente un comparador de dos números de 4 bits, con entradas de expansión. Compruebe que funciona correctamente.
+El proyecto debe llamarse según la siguiente nomenclatura: ApellidosNombre_T5_Num.prj, siendo los apellidos y el nombre el del Jefe de Grupo, que subirá a Moodle dicho proyecto, como un único fichero comprimido (con zip).
+Añada un fichero fuente, de texto, al proyecto que se debe llamar "PHR26-LNN.txt" (particularizando ese nombre, según el nombre del equipo) donde aparezca, de forma similar a como se hizo en las prácticas del tema anterior, el nombre de los integrantes del equipo, poniendo en primer lugar e identificándole como tal, al Jefe de Grupo, y los demás miembros, por orden alfabético.
+
+OPCIONAL 1: Realice en un nuevo proyecto, similar al obligatorio, donde implemente un multiplexor de dos canales de datos y extiéndalo para diseñar un multiplexor de 8 canales de datos.
+
+OPCIONAL 2: Realice en un nuevo proyecto, similar al obligatorio, donde implemente un decodificador de dos canales de entrada con entrada enable activa a nivel alto y extiéndalo para diseñar un decodificador de 8 canales de entrada con enable activo a nivel BAJO.
+
+OPCIONAL 3: Realice en un nuevo proyecto, similar al obligatorio, donde implemente otras puertas, no básicas, como pueden ser: NAND, NOR, XOR, XNOR y AOI de dos entradas. Puede completar el diseño de puertas hecho, implementando las mismas con un mayor número de entradas. Utilice, para este apartado, la propiedad del VHDL que permite los diseños genéricos/reusables.
+
+De hacer las partes opcionales (no olvide comprobar todas las implementaciones hechas), suba al moodle el fichero del proyecto, como se ha indicado, pero particularizando el nombre del mismo, añadiendo al final, el texto "_opN", siendo N el número de la parte opcional realizada.
+
+
+
+
+
+
+
+
+Imagen 3:
+Usando la librería IEEE, describa con el estilo de flujo de datos, las funciones básicas secuenciales: los biestables, implementando los más conocidos: JK, T y D. Como mejora a lo hecho, dótelos de entradas asíncronas, Preset y Clear, y varíe el sincronismo de reloj (siempre por flanco) en las implementaciones. Compruebe el correcto funcionamiento de cada una de las implementaciones hechas.
+Utilizando los diseños hechos, describa con el estilo estructural (realizando previamente el estudio previo, que debe adjuntar al proyecto) un reconocedor de la secuencia "1011" con solapamiento. Implemente la parte de datos y control por separado. Puede usar las puertas combinacionales implementadas en la práctica anterior, que necesite.
+El proyecto debe llamarse según la siguiente nomenclatura: ApellidosNombre_T5_Num.prj, siendo los apellidos y el nombre el del Jefe de Grupo, que subirá a Moodle dicho proyecto, como un único fichero comprimido (con zip).
+Añada un fichero fuente, de texto, al proyecto que se debe llamar "PHR26-LNN.txt" (particularizando ese nombre, según el nombre del equipo) donde aparezca, de forma similar a como se hizo en las prácticas del tema anterior, el nombre de los integrantes del equipo, poniendo en primer lugar e identificándole como tal, al Jefe de Grupo, y los demás miembros, por orden alfabético.
+
+OPCIONAL 1: Realice en un nuevo proyecto, similar al obligatorio, donde implemente un contador asíncrono módulo N (realice el diseño genérico) particularizado para 8. Dótelo de entrada asíncrona de puesta a cero, Reset. Use biestables JK o T. Añada el estudio teórico al proyecto.
+
+OPCIONAL 2: Realice en un nuevo proyecto, similar al obligatorio, donde implemente un registro universal de N bits, particularizado para 4. Utilice biestables D. Añada el estudio teórico al proyecto.
+
+OPCIONAL 3: Realice en un nuevo proyecto, similar al obligatorio, donde implemente un contador síncrono binario, ascendente/descendente módulo 16, con entradas de carga y puesta a cero, ambas de carácter síncrono. No use el diseño genérico en este caso.
+
+De hacer las partes opcionales (no olvide comprobar todas las implementaciones hechas), suba al moodle el fichero del proyecto, como se ha indicado, pero particularizando el nombre del mismo, añadiendo al final, el texto "_opN", siendo N el número de la parte opcional realizada.
