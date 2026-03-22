@@ -1,0 +1,9 @@
+Samuel García Carretero - JEFE
+Bruno Cabello Martín
+José María Cadarso Nieto
+Pablo Gómez Robledano
+
+Num_Fus: 71
+    - Para la matriz AND hemos usado 8 puertas AND de 8 entradas cada una (4 entradas + 4 entradas negadas)
+      En total 8*8 = 64 fusibles
+    - Para la matriz OR hemos conectado 3 fusibles a la salida S0 y 4 a IO0.
