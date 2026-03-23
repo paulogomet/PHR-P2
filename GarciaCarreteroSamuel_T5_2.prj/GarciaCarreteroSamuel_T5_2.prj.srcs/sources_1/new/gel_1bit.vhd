@@ -32,7 +32,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity gel_1bit is
---  Port ( );
+    Port (
+        A : in STD_LOGIC;
+        B : in STD_LOGIC;
+        Gt_in : in STD_LOGIC;
+        Eq_in : in STD_LOGIC;
+        Lt_in : in STD_LOGIC;
+        
+        Gt_out : out STD_LOGIC;
+        Eq_out : out STD_LOGIC;
+        Lt_out : out STD_LOGIC
+    );
 end gel_1bit;
 
 architecture Estructural of gel_1bit is
@@ -62,7 +72,7 @@ architecture Estructural of gel_1bit is
 
     signal not_A, not_B : STD_LOGIC;
     signal Gt_local, Lt_local, Eq_local : STD_LOGIC;
-    signal aux_eq1, aux_eq2 : STD_LOGIC;
+    signal aux_eq1, aux_eq2, aux_gt1, aux_lt1: STD_LOGIC;
 
 begin
     U1 : not_gate port map ( 
@@ -103,6 +113,36 @@ begin
         A => aux_eq1,
         B => aux_eq2,
         Z => Eq_local
+    );
+
+    U8 : and_gate port map (
+        A => Eq_local,
+        B => Gt_in,
+        Z => aux_gt1
+    );
+
+    U9 : or_gate port map (
+        A => Gt_local,
+        B => aux_gt1,
+        Z => Gt_out
+    );
+
+    U10 : and_gate port map (
+        A => Eq_local,
+        B => Lt_in,
+        Z => aux_lt1
+    );
+
+    U11 : or_gate port map (
+        A => aux_lt1,
+        B => Lt_local,
+        Z => Lt_out
+    );
+
+    U12 : and_gate port map (
+        A => Eq_local,
+        B => Eq_in,
+        Z => Eq_out
     );
 
 
