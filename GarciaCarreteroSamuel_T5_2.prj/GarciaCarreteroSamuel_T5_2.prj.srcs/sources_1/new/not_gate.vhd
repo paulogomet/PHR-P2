@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity not_gate is
     Port (
         A : in STD_LOGIC;
-        Z : out STD_LOGIC;
+        Z : out STD_LOGIC
     );
 end not_gate;
 

@@ -36,7 +36,7 @@ entity and_gate is
     Port (
         A : in STD_LOGIC;
         B : in STD_LOGIC;
-        Z : out STD_LOGIC;
+        Z : out STD_LOGIC
     );
 end and_gate;
 

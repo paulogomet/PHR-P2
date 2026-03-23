@@ -50,7 +50,7 @@ architecture Estructural of gel_1bit is
     component not_gate is
         Port (
         A : in STD_LOGIC;
-        Z : out STD_LOGIC;
+        Z : out STD_LOGIC
         );
     end component;
 
@@ -58,7 +58,7 @@ architecture Estructural of gel_1bit is
         Port (
         A : in STD_LOGIC;
         B : in STD_LOGIC;
-        Z : out STD_LOGIC;
+        Z : out STD_LOGIC
         );
     end component;
 
@@ -66,7 +66,7 @@ architecture Estructural of gel_1bit is
         Port (
         A : in STD_LOGIC;
         B : in STD_LOGIC;
-        Z : out STD_LOGIC;
+        Z : out STD_LOGIC
         );
     end component;
 
@@ -92,7 +92,7 @@ begin
     );
 
     U4 : and_gate port map (
-        A => not A,
+        A => not_A,
         B => B,
         Z => Lt_local
     );

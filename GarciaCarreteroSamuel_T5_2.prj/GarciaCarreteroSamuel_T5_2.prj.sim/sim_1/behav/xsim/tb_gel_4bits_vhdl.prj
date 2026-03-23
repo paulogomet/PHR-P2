@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../GarciaCarreteroSamuel_T5_2.prj.srcs/sources_1/new/and_gate.vhd" \
+"../../../../GarciaCarreteroSamuel_T5_2.prj.srcs/sources_1/new/gel_1bit.vhd" \
+"../../../../GarciaCarreteroSamuel_T5_2.prj.srcs/sources_1/new/gel_4bit.vhd" \
+"../../../../GarciaCarreteroSamuel_T5_2.prj.srcs/sources_1/new/not_gate.vhd" \
+"../../../../GarciaCarreteroSamuel_T5_2.prj.srcs/sources_1/new/or_gate.vhd" \
+"../../../../GarciaCarreteroSamuel_T5_2.prj.srcs/sources_1/new/tb_gel_4bits.vhd" \
+
+# Do not sort compile order
+nosort
