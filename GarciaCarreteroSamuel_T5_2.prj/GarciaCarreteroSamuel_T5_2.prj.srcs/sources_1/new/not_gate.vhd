@@ -32,7 +32,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity not_gate is
---  Port ( );
     Port (
         A : in STD_LOGIC;
         Z : out STD_LOGIC;
