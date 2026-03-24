@@ -44,3 +44,8 @@ architecture Behavioral of and_gate is
 begin
     Z <= A and B;
 end Behavioral;
+
+
+
+
+101101

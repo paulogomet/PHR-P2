@@ -2,3 +2,6 @@ Running: xsim.dir/tb_gel_4bits_behav/xsimk -simmode gui -wdb tb_gel_4bits_behav.
 Design successfully loaded
 Design Loading Memory Usage: 201664 KB (Peak: 201664 KB)
 Design Loading CPU Usage: 1700 ms
+Simulation completed
+Simulation Memory Usage: 287500 KB (Peak: 340932 KB)
+Simulation CPU Usage: 1720 ms
