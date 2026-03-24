@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_reconocedor_1011_behav/xsimk -simmode gui -wdb tb_reconocedor_1011_behav.wdb -simrunnum 0 -socket 34827
+Design successfully loaded
+Design Loading Memory Usage: 201632 KB (Peak: 201684 KB)
+Design Loading CPU Usage: 1530 ms
