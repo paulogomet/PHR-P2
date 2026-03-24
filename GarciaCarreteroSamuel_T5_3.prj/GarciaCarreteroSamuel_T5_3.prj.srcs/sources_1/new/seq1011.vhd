@@ -3,13 +3,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity seq1011 is
     Port (
-        CLK    : in  STD_LOGIC;
-        CLEAR  : in  STD_LOGIC;  -- Activo a nivel BAJO ('0' reinicia la máquina a S0)
-        PRESET : in  STD_LOGIC;  -- Activo a nivel BAJO ('0' forzaría todo a '1', usar a '1' normalmente)
-        X      : in  STD_LOGIC;
-        Z      : out STD_LOGIC
+        CLK   : in  STD_LOGIC;
+        RESET : in  STD_LOGIC;
+        X     : in  STD_LOGIC;
+        Z     : out STD_LOGIC
     );
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 architecture Estructural of detector_1011 is
 
@@ -36,53 +36,64 @@ architecture Behavioral of seq1011 is
     type state_type is (S0, S1, S2, S3, S4);
     signal state, next_state : state_type;
 >>>>>>> Stashed changes
+=======
+architecture Behavioral of detector_1011 is
+    type state_type is (S0, S1, S2, S3, S4);
+    signal state, next_state : state_type;
+>>>>>>> origin/main
 begin
 
-    -- ==========================================
-    -- ECUACIONES COMBINACIONALES (Flujo de Datos)
-    -- ==========================================
-    
-    -- D2 = Q1·Q0·X
-    D(2) <= Q(1) and Q(0) and X;
-    
-    -- D1 = (Q0·X') + (Q1·Q0'·X) + (Q2·X')
-    D(1) <= (Q(0) and (not X)) or (Q(1) and (not Q(0)) and X) or (Q(2) and (not X));
-    
-    -- D0 = (Q0' + Q1')·X
-    D(0) <= ((not Q(0)) or (not Q(1))) and X;
-    
-    -- Salida de Moore: Z = Q2
-    Z <= Q(2);
+    process(CLK, RESET)
+    begin
+        if RESET = '1' then
+            state <= S0;
+        elsif rising_edge(CLK) then
+            state <= next_state;
+        end if;
+    end process;
 
-    -- ==========================================
-    -- INSTANCIACIÓN DE LOS FLIP-FLOPS
-    -- ==========================================
-    
-    -- Flip-Flop 2 (Bit más significativo)
-    FF2: d_flipflop port map (
-        clk    => CLK,
-        clear  => CLEAR,   -- Conexión directa del puerto exterior
-        preset => PRESET,  -- Conexión directa del puerto exterior
-        data   => D(2),
-        z      => Q(2)
-    );
+    process(state, X)
+    begin
+        case state is
 
-    -- Flip-Flop 1 (Bit intermedio)
-    FF1: d_flipflop port map (
-        clk    => CLK,
-        clear  => CLEAR,
-        preset => PRESET,
-        data   => D(1),
-        z      => Q(1)
-    );
+            when S0 =>
+                if X = '1' then
+                    next_state <= S1;
+                else
+                    next_state <= S0;
+                end if;
 
-    -- Flip-Flop 0 (Bit menos significativo)
-    FF0: d_flipflop port map (
-        clk    => CLK,
-        clear  => CLEAR,
-        preset => PRESET,
-        data   => D(0),
-        z      => Q(0)
-    );
+            when S1 =>
+                if X = '0' then
+                    next_state <= S2;
+                else
+                    next_state <= S1;
+                end if;
 
-end Estructural;
+            when S2 =>
+                if X = '1' then
+                    next_state <= S3;
+                else
+                    next_state <= S0;
+                end if;
+
+            when S3 =>
+                if X = '1' then
+                    next_state <= S4;
+                else
+                    next_state <= S2;
+                end if;
+
+            when S4 =>
+                if X = '1' then
+                    next_state <= S1;
+                else
+                    next_state <= S2;
+                end if;
+
+        end case;
+    end process;
+
+    Z <= '1' when state = S4 else '0';
+
+end Behavioral;
