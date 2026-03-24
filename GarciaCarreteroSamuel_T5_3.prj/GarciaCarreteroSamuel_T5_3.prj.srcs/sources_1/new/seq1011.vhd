@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity detector_1011 is
+entity seq1011 is
     Port (
         CLK    : in  STD_LOGIC;
         CLEAR  : in  STD_LOGIC;  -- Activo a nivel BAJO ('0' reinicia la máquina a S0)
@@ -9,8 +9,8 @@ entity detector_1011 is
         X      : in  STD_LOGIC;
         Z      : out STD_LOGIC
     );
-end detector_1011;
 
+<<<<<<< Updated upstream
 architecture Estructural of detector_1011 is
 
     -- 1. Declaramos el componente de tu Flip-Flop D
@@ -28,6 +28,14 @@ architecture Estructural of detector_1011 is
     signal Q : STD_LOGIC_VECTOR(2 downto 0);
     signal D : STD_LOGIC_VECTOR(2 downto 0);
 
+=======
+    
+end seq1011;
+
+architecture Behavioral of seq1011 is
+    type state_type is (S0, S1, S2, S3, S4);
+    signal state, next_state : state_type;
+>>>>>>> Stashed changes
 begin
 
     -- ==========================================

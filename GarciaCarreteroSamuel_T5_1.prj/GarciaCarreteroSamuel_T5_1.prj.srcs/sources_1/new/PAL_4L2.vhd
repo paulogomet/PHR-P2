@@ -79,6 +79,8 @@ architecture Behavioral of PAL_4L2 is
         -- Términos no usados
         others => (others => '0')
     );
+
+    A¬S or BS
     
 
 begin
