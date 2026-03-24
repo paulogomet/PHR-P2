@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../GarciaCarreteroSamuel_T5_1.prj.srcs/sources_1/new/PAL_4L2.vhd" \
+"../../../../GarciaCarreteroSamuel_T5_1.prj.srcs/sources_1/new/PAL_Prog.vhd" \
+
+# Do not sort compile order
+nosort
