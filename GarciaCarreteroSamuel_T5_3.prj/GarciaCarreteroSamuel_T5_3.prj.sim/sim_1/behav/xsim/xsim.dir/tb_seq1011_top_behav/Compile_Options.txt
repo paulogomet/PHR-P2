@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "tb_seq1011_top_behav" "xil_defaultlib.tb_seq1011_top" -log "elaborate.log" 

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../GarciaCarreteroSamuel_T5_3.prj.srcs/sources_1/new/seq1011.vhd" \
+"../../../../GarciaCarreteroSamuel_T5_3.prj.srcs/sources_1/new/tb_seq1011_top.vhd" \
+
+# Do not sort compile order
+nosort
