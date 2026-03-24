@@ -15,7 +15,6 @@ architecture Behavioral of detector_1011 is
     signal state, next_state : state_type;
 begin
 
-    -- 🔹 Registro de estado
     process(CLK, RESET)
     begin
         if RESET = '1' then
@@ -25,7 +24,6 @@ begin
         end if;
     end process;
 
-    -- 🔹 Lógica de transición
     process(state, X)
     begin
         case state is
@@ -68,7 +66,6 @@ begin
         end case;
     end process;
 
-    -- 🔹 Salida
     Z <= '1' when state = S4 else '0';
 
 end Behavioral;
