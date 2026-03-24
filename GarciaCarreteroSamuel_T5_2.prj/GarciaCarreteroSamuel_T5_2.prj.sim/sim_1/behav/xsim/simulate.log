@@ -1,2 +1,4 @@
 Time resolution is 1 ps
-INFO: xsimkernel Simulation Memory Usage: 287500 KB (Peak: 340932 KB), Simulation CPU Usage: 1780 ms
+Note: tb_and_gate completed successfully
+Time: 40 ns  Iteration: 0  Process: /tb_and_gate/stim_proc  File: /home/pablo/Documents/Universidad/ing_computadores/3o/3o_2cuatri/PHR/PHR_P2/GarciaCarreteroSamuel_T5_2.prj/GarciaCarreteroSamuel_T5_2.prj.srcs/sources_1/new/tb_and_gate.vhd
+INFO: xsimkernel Simulation Memory Usage: 283364 KB (Peak: 340896 KB), Simulation CPU Usage: 1550 ms
