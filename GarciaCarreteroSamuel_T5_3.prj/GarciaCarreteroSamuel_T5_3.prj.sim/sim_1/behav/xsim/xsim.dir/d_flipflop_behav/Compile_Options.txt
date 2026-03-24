@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "d_flipflop_behav" "xil_defaultlib.d_flipflop" -log "elaborate.log" 

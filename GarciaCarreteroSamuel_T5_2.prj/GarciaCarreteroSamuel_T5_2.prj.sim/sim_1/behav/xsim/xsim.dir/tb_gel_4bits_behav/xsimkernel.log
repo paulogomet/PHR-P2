@@ -1,4 +1,7 @@
-Running: xsim.dir/tb_gel_4bits_behav/xsimk -simmode gui -wdb tb_gel_4bits_behav.wdb -simrunnum 0 -socket 55273
+Running: xsim.dir/tb_gel_4bits_behav/xsimk -simmode gui -wdb tb_gel_4bits_behav.wdb -simrunnum 0 -socket 54853
 Design successfully loaded
 Design Loading Memory Usage: 201664 KB (Peak: 201664 KB)
-Design Loading CPU Usage: 1730 ms
+Design Loading CPU Usage: 1760 ms
+Simulation completed
+Simulation Memory Usage: 287500 KB (Peak: 340932 KB)
+Simulation CPU Usage: 1780 ms
