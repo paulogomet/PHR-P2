@@ -17,10 +17,8 @@ architecture Dataflow of t_flipflop is
     signal Q_next : STD_LOGIC;
 begin
 
-    -- 🔹 ECUACIÓN T (FLUJO DE DATOS)
     Q_next <= T xor Q_int;
 
-    -- 🔹 MEMORIA (registro)
     process(CLK, PRESET, CLEAR)
     begin
         if CLEAR = '1' then
@@ -32,7 +30,6 @@ begin
         end if;
     end process;
 
-    -- 🔹 SALIDAS
     Q  <= Q_int;
     Qn <= not Q_int;
 
