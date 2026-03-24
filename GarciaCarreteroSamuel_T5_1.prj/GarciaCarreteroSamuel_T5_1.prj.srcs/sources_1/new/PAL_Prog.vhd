@@ -25,6 +25,7 @@ begin
         );
 
     stim_proc: process
+        variable expected_s0 : STD_LOGIC;
     begin
         -- Recorre todas las combinaciones de entrada
         for b_io0 in 0 to 1 loop
@@ -57,13 +58,18 @@ begin
 
                         wait for 10 ns;
 
-                        -- Según la implementación actual, S0 queda siempre a '1'
-                        assert (S0 = '1')
-                            report "Fallo en S0 para la combinacion aplicada"
+                        -- PAL programada como MUX 2:1: S0 = (not I0 and I1) or (I0 and IO0)
+                        if I0 = '0' then
+                            expected_s0 := I1;
+                        else
+                            expected_s0 := io0_drv;
+                        end if;
+
+                        assert (S0 = expected_s0)
+                            report "Fallo en S0 (MUX 2:1) para la combinacion aplicada"
                             severity error;
 
-                        -- Según la implementación actual, IO0 queda en alta impedancia
-                        -- y por tanto prevalece el driver externo
+                        -- IO0 se deja en alta impedancia desde la PAL
                         assert (io0_line = io0_drv)
                             report "Fallo en IO0 (esperado tri-state del DUT)"
                             severity error;

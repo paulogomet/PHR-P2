@@ -67,9 +67,16 @@ architecture Behavioral of PAL_4L2 is
     -- declaramos las matrices de fusibles físicas basandonos en la plantilla de antes
     -- others => '0' sirve para rellenar todas las posiciones con un '0'
     constant AND_FUSES : and_matrix := (
-        0 => (0 => '1', 1 => '1', others => '0'),
-        1 => (0 => '1', 2 => '1', others => '0'),
-        2 => (0 => '1', 5 => '1', others => '0'),
+        -- T0: habilitación de salida tri-state de IO0 (0 = siempre alta impedancia)
+        0 => (others => '0'),
+
+        -- T1 para S0: (not I0) and I1
+        1 => (1 => '1', 2 => '1', others => '0'),
+
+        -- T2 para S0: I0 and IO0
+        2 => (0 => '1', 6 => '1', others => '0'),
+
+        -- Términos no usados
         others => (others => '0')
     );
     
@@ -88,11 +95,13 @@ begin
     -- conectamos las entradas que hayamos especificado a las puertas and
     process(vertical_lines)
         variable temp_and : STD_LOGIC;
+        variable has_connection : STD_LOGIC;
     begin  
         
         -- para cada puerta and
         for i in 0 to 7 loop
             temp_and := '1';
+            has_connection := '0';
 
             -- Para cada entrada de una puerta and
             for j in 0 to 7 loop
@@ -100,11 +109,16 @@ begin
                 -- si el fusible es 1, está conectado, entonces hace que temp_and sea el resultado de temp_and AND (la linea vertical que toque)
                 if AND_FUSES(i, j) = '1' then
                     temp_and := temp_and AND vertical_lines(j);
+                    has_connection := '1';
                 end if;
             end loop;
             
-            -- La salida de la puerta AND nº i = temp_and
-            and_outputs(i) <= temp_and;
+            -- Si no hay conexiones, consideramos término no programado => 0
+            if has_connection = '1' then
+                and_outputs(i) <= temp_and;
+            else
+                and_outputs(i) <= '0';
+            end if;
 
         end loop;
     end process;

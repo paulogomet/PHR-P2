@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_pal_4l2_behav/xsimk -simmode gui -wdb tb_pal_4l2_behav.wdb -simrunnum 0 -socket 40051
+Design successfully loaded
+Design Loading Memory Usage: 201636 KB (Peak: 201688 KB)
+Design Loading CPU Usage: 1600 ms
